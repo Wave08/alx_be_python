@@ -1,19 +1,19 @@
 num1 = int(input("Enter the first number: "))
 num2 = int(input("Enter the second number: "))
 
-operand = (input("Choose the operation (+, -, *, /): "))
+operator = (input("Choose the operation (+, -, *, /): "))
 
 
-if operand == "+":
+if operator == "+":
     result = num1 + num2
     print("The result is",result)
-elif operand == "-":
+elif operator == "-":
     result = num1 - num2
     print("The result is",result)
-elif operand == "*":
+elif operator == "*":
     result = num1 * num2
     print("The result is",result)
-elif operand == "/":
+elif operator == "/":
     try:
         result = num1 / num2
         print("The result is ", result)
