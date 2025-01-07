@@ -1,42 +1,39 @@
-while True:
-    try:
-        num1 = int(input("\nEnter the first number: "))
-        num2 = int(input("Enter the second number: "))
-    except ValueError as ve:
-        print("Error: ",ve)
-        continue
+def calculator():
     
-
+    # Prompt the user for two numbers
+    num1 = int(input("Enter the first number: "))
+    num2 = int(input("Enter the second number: "))
     
-    operator = (input("\nChoose the operation (+, -, *, /): "))
-
-
-    if operator == "+":
-        result = num1 + num2
-        print("The result is",result)
-    elif operator == "-":
-        result = num1 - num2
-        print("The result is",result)
-    elif operator == "*":
-        result = num1 * num2
-        print("The result is",result)
-    elif operator == "/":
-        try:
-            result = num1 / num2
-            print("The result is ", result)
-        except ZeroDivisionError as zd:
-            print("Error:", zd)
-            continue
-    else:
-        print("That is an invalid operator")
-        continue
+    # Prompt the user fot the type operation they would want to perform
+    operation = input("Choose the operation: (+, -, *, /): ")
     
-    # Prompt if the user still wants to perform another calculation
-    another = input("Do you want to perform another calculation: ").strip().lower()
-    
-    if another != "yes":
-        print("Goodbye")
-        break
-
-
-    
+    # Calculations using the match case
+    match operation:
+        
+        # First case if operand is a plus sign perform Addition 
+        case "+":
+            print("The result is", num1 + num2)
+        
+        # If operation is - sign perform subtraction    
+        case "-":
+            print("The result is", num1 - num2)
+            
+        # If operation is a * asteric then perform multiplication
+        case "*":
+            print("The answer is", num1 * num2)
+            
+        # If operation is / then perform division
+        case "/" if num2 != 0:
+            print("The result is", num1 / num2)
+            
+        case "/":
+            print("Cannot divide by zero")
+            
+        # Default if operation does not exist
+        case _:
+            print("This operation does not exist")
+            
+        
+ 
+            
+calculator()
