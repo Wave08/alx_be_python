@@ -14,4 +14,4 @@ def perform_operation(num1, num2, operation):
         raise ValueError(f"Invalid operation: {operation}")    
     
     
-print(perform_operation(12, 4, "/"))
+print(perform_operation(12, 0, "/"))
